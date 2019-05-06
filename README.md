@@ -24,3 +24,10 @@ $ sequelize db:migrate <br/>
 
 # Tutorial url: https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize <br/>
 
+npm install supertest mocha chai --save-dev  <br/>
+
+# References <br/>
+https://www.codementor.io/olatundegaruba/integration-testing-supertest-mocha-chai-6zbh6sefz <br/>
+https://hackernoon.com/api-testing-using-supertest-1f830ce838f1 <br/>
+
+
