@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon ./bin/www",
+    "start": "nodemon ./bin/www",
     "test": "NODE_ENV=test mocha --timeout 10000"
   },
+  "engines" : {
+    "node":8.11.1,
+    "npm" : 6.9.0
+  },
   "keywords": [],
-  "author": "",
+  "author": "Senthilkumar",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
