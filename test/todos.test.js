@@ -13,7 +13,7 @@ describe('Todos API Integration Tests', function(){
   describe('#GET /api/todos', function(){
 
     beforeEach(() => {
-      nock('http://localhost:8000')
+      nock('http://localhost:3000')
         .get('/api/todos')
         .reply(200, response);
     });
