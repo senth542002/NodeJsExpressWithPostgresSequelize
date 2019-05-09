@@ -23,9 +23,9 @@ eslint:
     # Install ESLint in this docker container
     - npm install -g eslint
     # Configure ESLint (will read your .eslintrc file)
-    - eslint --init
+    #- eslint --init
     # Run ESLint
-    - eslint app/*.js
+    - eslint ./app/*
 
 testing_testing:
   stage: test
