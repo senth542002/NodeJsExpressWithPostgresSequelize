@@ -31,3 +31,20 @@ https://www.codementor.io/olatundegaruba/integration-testing-supertest-mocha-cha
 https://hackernoon.com/api-testing-using-supertest-1f830ce838f1 <br/>
 
 
+# Learnings: <br/>
+Add engines Entry ("engines") to the package.json for heroku to identify. <br/>
+Install heroku cli: npm install -g heroku <br/>
+log into heroku cli : heroku login <br/>
+Create heroku deployment app: heroku create nodejs-expressjs-with-postgres <br/>
+Create heroku addon postgresql db: heroku addons: create heroku-postgresql:hobby-dev <br/>
+
+execute the command sequelize init from the root folder so that migrations, config, models, seeders folders get created. <br/>
+To create tables in heroku postgresql: heroku run sequelize db:migrate <br/>
+
+# Do the following to deploy the app to heroku <br/>
+git add . <br/>
+git commit -m "" <br/>
+git push heroku master <br/>
+
+
+
