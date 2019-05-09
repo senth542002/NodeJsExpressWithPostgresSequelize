@@ -1,4 +1,4 @@
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger)
+| Build Status | [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/pipelines/60542480) |
 
 # NodeJsExpressWithPostgresSequelize <br/>
 
