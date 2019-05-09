@@ -12,11 +12,11 @@ var expect = chai.expect;
 describe('Todos API Integration Tests', function(){
   describe('#GET /api/todos', function(){
 
-    beforeEach(() => {
-      nock('http://localhost:3000')
-        .get('/api/todos')
-        .reply(200, response);
-    });
+    // beforeEach(() => {
+    //   nock('http://localhost:3000')
+    //     .get('/api/todos')
+    //     .reply(200, response);
+    // });
 
     it.only('should get all tasks', function(done){
       request(app).get('/api/todos')

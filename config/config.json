@@ -13,7 +13,11 @@
     "database": "d1tc0heje5egs4",
     "host": "ec2-174-129-208-118.compute-1.amazonaws.com",
     "port": 5432,
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "protocol": "postgres",
+    "dialectOptions": {
+        "ssl": true
+    }
   },
   "production": {
     "use_env_variable": "DATABASE_URL"
