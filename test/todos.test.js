@@ -18,7 +18,7 @@ describe('Todos API Integration Tests', function(){
         .reply(200, response);
     });
 
-    it('should get all tasks', function(done){
+    it.only('should get all tasks', function(done){
       request(app).get('/api/todos')
         .end(function(err, res){
           expect(res.status).to.equal(200);
