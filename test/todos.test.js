@@ -2,12 +2,22 @@
 
 var app = require('../app'),
     chai = require('chai'),
-    request = require('supertest');
+    request = require('supertest'),
+    nock = require('nock');
+
+const response = require('./getAllResponse')
 
 var expect = chai.expect;
 
 describe('Todos API Integration Tests', function(){
   describe('#GET /api/todos', function(){
+
+    beforeEach(() => {
+      nock('http://localhost:8000')
+        .get('/api/todos')
+        .reply(200, response);
+    });
+
     it('should get all tasks', function(done){
       request(app).get('/api/todos')
         .end(function(err, res){
