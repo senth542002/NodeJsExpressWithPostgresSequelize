@@ -1,6 +1,7 @@
 | Label | Image |
 | --- | --- |
-| Build Status | [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/pipelines/) |
+| Pipeline status | [![pipeline status](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/badges/master/pipeline.svg)](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/commits/master) |
+|Coverage report | [![coverage report](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/badges/master/coverage.svg)](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/commits/master) |
 
 
 # NodeJsExpressWithPostgresSequelize <br/>
