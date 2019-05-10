@@ -1,3 +1,9 @@
+| Label | Image |
+| --- | --- |
+| Pipeline status | [![pipeline status](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/badges/master/pipeline.svg)](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/commits/master) |
+|Coverage report | [![coverage report](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/badges/master/coverage.svg)](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/commits/master) |
+
+
 # NodeJsExpressWithPostgresSequelize <br/>
 
 mkdir -p NodeJsExpressWithPostgresSequelize/{bin,server} <br/>
