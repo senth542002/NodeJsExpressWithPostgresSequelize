@@ -35,7 +35,6 @@ eslint:
 
 testing_testing:
   stage: test
-  coverage: All files[^|]*\|[^|]*\s+([\d\.]+)
   script: npm test
   artifacts:
       paths:
