@@ -2,6 +2,7 @@ image: node:latest
 
 stages:
   - build
+  - format
   - lint
   - test
 
@@ -16,6 +17,11 @@ install_dependencies:
   artifacts:
     paths:
       - node_modules/
+formating:
+  stage: format
+  script:
+    - npm install -g husky lint-staged
+    - npm run format
 
 eslint:
   stage: lint
@@ -29,4 +35,8 @@ eslint:
 
 testing_testing:
   stage: test
+  coverage: [^|]*\|[^|]*\s+([\d\.]+)
   script: npm test
+  artifacts:
+      paths:
+      - coverage/
