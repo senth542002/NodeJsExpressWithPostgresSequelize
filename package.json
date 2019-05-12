@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon ./bin/www",
     "test": "NODE_ENV=test mocha --timeout 10000",
+    "test-with-coverage": "nyc --reporter=text mocha",
     "format": "prettier-standard 'app/**/*.js' 'app/**/*.jsx' 'server/**/*.js'"
   },
   "lint-staged": {

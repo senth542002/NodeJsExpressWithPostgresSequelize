@@ -36,6 +36,7 @@ eslint:
 testing_testing:
   stage: test
   script: npm test
+  coverage: /All files\s*\|\s*([\d\.]+)/
   artifacts:
       paths:
       - coverage/

@@ -14,6 +14,20 @@ $ npm install --save express body-parser morgan <br/>
 $ npm i -D nodemon <br/>
 $ npm run start:dev <br/>
 
+# On macOS </br>
+
+If you installed PostgreSQL via Homebrew: </br>
+
+To start manually: </br>
+pg_ctl -D /usr/local/var/postgres start </br>
+To stop manually: </br>
+pg_ctl -D /usr/local/var/postgres stop </br>
+To start PostgreSQL server now and relaunch at login: </br>
+brew services start postgresql </br>
+And stop PostgreSQL: </br>
+brew services stop postgresql </br>
+
+
 # Sequelize Setup <br/>
 
 $ npm install -g sequelize-cli <br/>
@@ -51,6 +65,3 @@ To create tables in heroku postgresql: heroku run sequelize db:migrate <br/>
 git add . <br/>
 git commit -m "" <br/>
 git push heroku master <br/>
-
-
-
