@@ -35,7 +35,9 @@ eslint:
 
 testing_testing:
   stage: test
-  script: npm test
+  script:
+    - npm test
+    - mv .nyc_output/ coverage/
   coverage: /All files\s*\|\s*([\d\.]+)/
   artifacts:
       paths:
