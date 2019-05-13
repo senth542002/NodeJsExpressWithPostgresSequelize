@@ -1,5 +1,13 @@
 image: node:latest
 
+services:
+  - postgres:latest
+
+variables:
+  POSTGRES_DB: nice_marmot
+  POSTGRES_USER: runner
+  POSTGRES_PASSWORD: ""
+
 stages:
   - build
   - format
