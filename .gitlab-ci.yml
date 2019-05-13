@@ -45,6 +45,7 @@ testing_testing:
   stage: test
   script:
     - npm install -g nyc
+    - sequelize db:migrate 
     - npm test
     - npm run coverage
     - mv .nyc_output/ coverage/
