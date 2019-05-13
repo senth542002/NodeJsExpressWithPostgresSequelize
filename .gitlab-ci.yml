@@ -4,9 +4,19 @@ services:
   - postgres:latest
 
 variables:
-  POSTGRES_DB: nice_marmot
-  POSTGRES_USER: runner
+
+  POSTGRES_DB: todos-dev
+  POSTGRES_USER: senthilkumar
   POSTGRES_PASSWORD: ""
+  POSTGRES_HOST: postgres
+
+connect:
+  image: postgres
+  script:
+  # official way to provide password to psql: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
+  - export PGPASSWORD=$POSTGRES_PASSWORD
+  - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
+
 
 stages:
   - build
@@ -45,7 +55,8 @@ testing_testing:
   stage: test
   script:
     - npm install -g nyc
-    - sequelize db:migrate 
+    - npm install -g sequelize-cli
+    - sequelize db:migrate
     - npm test
     - npm run coverage
     - mv .nyc_output/ coverage/
