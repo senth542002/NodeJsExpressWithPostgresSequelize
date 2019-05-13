@@ -56,7 +56,7 @@ testing_testing:
   script:
     - npm install -g nyc
     - npm install -g sequelize-cli
-    - sequelize db:migrate
+    - NODE_ENV=test sequelize db:migrate
     - npm test
     - npm run coverage
     - mv .nyc_output/ coverage/
