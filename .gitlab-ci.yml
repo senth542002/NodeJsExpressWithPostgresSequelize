@@ -38,7 +38,7 @@ testing_testing:
   script:
     - npm install -g nyc
     - npm test
-    - npm run test-with-coverage
+    - npm run coverage
     - mv .nyc_output/ coverage/
   coverage: /All files\s*\|\s*([\d\.]+)/
   artifacts:
