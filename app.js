@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({extended : false}));
 
 require('./app/routes')(app);
 app.get('*', (req, res) => res.status(200).send({
-  message: 'Welcome to the begining of nothingness.'
+  message: 'Welcome to the begining of nothingness.....'
 }));
 
 
