@@ -23,6 +23,7 @@ stages:
   - format
   - lint
   - test
+  - push_to_heroku
 
 cache:
   paths:
@@ -64,3 +65,17 @@ testing_testing:
   artifacts:
       paths:
       - coverage/
+
+deploy:
+  stage: push_to_heroku
+  variables:
+  # I need to control which Git branch I'm on in order to push to Heroku
+    publication_branch_name: "nodejs-expressjs-with-postgres"
+
+  script:
+  - git config user.email "senth542002@gmail.com"
+  - git config user.name "GitLab CI on behalf of Senthil Kumar"
+  - apt-get update
+  - apt-get --yes --force-yes install rubygems
+  - gem install dpl
+  - dpl --provider=heroku --app=$publication_branch_name --api-key=$HEROKU_API_KEY
