@@ -34,7 +34,7 @@ describe('Todos API Integration Tests', function(){
       request(app).get('/')
         .end(function(err, res){
           expect(res.status).to.equal(200);
-          expect(res.body.message).to.be.equal('Welcome to the begining of nothingness.');
+          expect(res.body.message).to.be.equal('Welcome to the begining of nothingness.....');
           done();
         });
     });
