@@ -70,6 +70,7 @@ deploy:
   stage: push_to_heroku
   only:
       - release
+      
   variables:
   # I need to control which Git branch I'm on in order to push to Heroku
     publication_branch_name: "nodejs-expressjs-with-postgres"
