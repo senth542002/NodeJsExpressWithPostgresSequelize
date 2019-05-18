@@ -3,7 +3,7 @@ const TodoItem = require('../../models').TodoItem
 
 module.exports = {
   create (req, res) {
-    console.log(req.body);
+    console.log('Request:'+req.body);
     return Todo.create({
         title: req.body.title
       })
@@ -15,6 +15,7 @@ module.exports = {
   },
 
   list (req, res) {
+    console.log('Request:'+req.body);
     return Todo.findAll({
       include: [
         {
@@ -24,10 +25,14 @@ module.exports = {
       ]
     })
       .then(todos => res.status(200).send(todos))
-      .catch(error => res.status(400).send(error))
+      .catch(error => {
+        console.log(error);
+        res.status(400).send(error)
+      })
   },
 
   update (req, res) {
+    console.log('Request:'+req.body);
     return Todo.findByPk(req.params.todoId, {
       include: [
         {
@@ -47,12 +52,16 @@ module.exports = {
             title: req.body.title || todo.title
           })
           .then(todo => res.status(200).send(todo))
-          .catch(error => res.status(400).send(error))
+          .catch(error => {
+            console.log(error);
+            res.status(400).send(error)
+          })
       })
       .catch(error => res.status(400).send(error))
   },
 
   destroy (req, res) {
+    console.log('Request:'+req.body);
     return Todo.findByPk(req.params.todoId, {
       include: [
         {
@@ -72,8 +81,14 @@ module.exports = {
           .then(() =>
             res.status(200).send({ message: 'Todo deleted successfully.' })
           )
-          .catch(error => res.status(400).send(error))
+          .catch(error => {
+            console.log(error);
+            res.status(400).send(error)
+          })
       })
-      .catch(error => res.status(400).send(error))
+      .catch(error => {
+        console.log(error);
+        res.status(400).send(error)
+      })
   }
 }
