@@ -3,12 +3,12 @@ image: node:latest
 services:
   - postgres:latest
 
-variables:
-
-  POSTGRES_DB: todos-dev
-  POSTGRES_USER: senthilkumar
-  POSTGRES_PASSWORD: ""
-  POSTGRES_HOST: postgres
+# variables:
+#
+#   POSTGRES_DB: todos-dev
+#   POSTGRES_USER: senthilkumar
+#   POSTGRES_PASSWORD: ""
+#   POSTGRES_HOST: postgres
 
 connect:
   image: postgres
@@ -70,7 +70,7 @@ deploy:
   stage: push_to_heroku
   only:
       - release
-      
+
   variables:
   # I need to control which Git branch I'm on in order to push to Heroku
     publication_branch_name: "nodejs-expressjs-with-postgres"
