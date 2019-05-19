@@ -19,10 +19,10 @@ connect:
 
 
 stages:
+  - test
   #- build
   #- format
   #- lint
-  - test
   #- push_to_heroku
 
 cache:
