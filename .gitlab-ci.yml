@@ -1,21 +1,3 @@
-Skip to content
-
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
-
-@senth542002
-1
-0 0 senth542002/NodeJsExpressWithPostgresSequelize
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
-NodeJsExpressWithPostgresSequelize/.gitlab-ci.yml
-@senth542002 senth542002 removing test postgresql variables
-28ca23d 15 hours ago
-85 lines (71 sloc)  1.73 KB
-
 image: node:latest
 
 services:
