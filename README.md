@@ -4,6 +4,32 @@
 |Coverage report | [![coverage report](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/badges/master/coverage.svg)](https://gitlab.com/senth542002/NodeJsExpressWithPostgresSequelize/commits/master) |
 
 
+Basic Rest Application which returns Hello World response for a get Call. 
+
+Following commands have to be run to execute the REST Service: <br/>
+npm init <br/>
+npm install express --save <br/>
+npm install eslint --save-dev <br/>
+npm install js-beautify <br/>
+
+#postgres database<br/>
+
+#Initialize Database<br/>
+initdb /usr/local/var/postgres<br/>
+
+pg_ctl -D /usr/local/var/postgres start<br/>
+pg_ctl -D /usr/local/var/postgres stop<br/>
+
+createdb mydatabasename<br/>
+dropdb mydatabasename<br/>
+
+sudo -u senthilkumar psql postgres<br/>
+postgres=#CREATE USER postgres SUPERUSER;<br/>
+postgres=#CREATE DATABASE postgres WITH OWNER postgres;<br/>
+
+npm install pg sequelize --save<br/>
+
+
 # NodeJsExpressWithPostgresSequelize <br/>
 
 mkdir -p NodeJsExpressWithPostgresSequelize/{bin,server} <br/>
