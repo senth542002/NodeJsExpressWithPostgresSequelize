@@ -28,6 +28,20 @@ stages:
 cache:
   paths:
     - node_modules/
+    
+testing_testing:
+  stage: test
+  script:
+    - npm install -g nyc
+    - npm install -g sequelize-cli
+    - NODE_ENV=test sequelize db:migrate
+    - npm test
+    - npm run coverage
+    - mv .nyc_output/ coverage/
+  coverage: /All files\s*\|\s*([\d\.]+)/
+  artifacts:
+      paths:
+      - coverage/
 
 install_dependencies:
   stage: build
@@ -51,20 +65,6 @@ eslint:
     #- eslint --init
     # Run ESLint
     - eslint ./app/*
-
-testing_testing:
-  stage: test
-  script:
-    - npm install -g nyc
-    - npm install -g sequelize-cli
-    - NODE_ENV=test sequelize db:migrate
-    - npm test
-    - npm run coverage
-    - mv .nyc_output/ coverage/
-  coverage: /All files\s*\|\s*([\d\.]+)/
-  artifacts:
-      paths:
-      - coverage/
 
 deploy:
   stage: push_to_heroku
