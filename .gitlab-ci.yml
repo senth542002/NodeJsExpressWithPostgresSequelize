@@ -20,10 +20,6 @@ connect:
 
 stages:
   - test
-  - build
-  # - format
-  # - lint
-  # - push_to_heroku
 
 cache:
   paths:
