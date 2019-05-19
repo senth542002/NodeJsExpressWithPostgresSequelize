@@ -3,19 +3,19 @@ image: node:latest
 services:
   - postgres:latest
 
-# variables:
-#
-#   POSTGRES_DB: todos-dev
-#   POSTGRES_USER: senthilkumar
-#   POSTGRES_PASSWORD: ""
-#   POSTGRES_HOST: postgres
+variables:
+
+  POSTGRES_DB: $POSTGRES_DB
+  POSTGRES_USER: $POSTGRES_USER
+  POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+  POSTGRES_HOST: $POSTGRES_HOST
 
 connect:
   image: postgres
   script:
   # official way to provide password to psql: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
   - export PGPASSWORD=$POSTGRES_PASSWORD
-  - psql -h "postgres" -U "$POSTGRES_USER" -d "$POSTGRES_DB" -c "SELECT 'OK' AS status;"
+  - psql -h $POSTGRES_HOST -U $POSTGRES_USER -d $POSTGRES_DB -c "SELECT 'OK' AS status;"
 
 
 stages:
