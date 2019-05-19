@@ -1,43 +1,51 @@
+Skip to content
+
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@senth542002
+1
+0 0 senth542002/NodeJsExpressWithPostgresSequelize
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Insights  Settings
+NodeJsExpressWithPostgresSequelize/.gitlab-ci.yml
+@senth542002 senth542002 removing test postgresql variables
+28ca23d 15 hours ago
+85 lines (71 sloc)  1.73 KB
+
 image: node:latest
 
 services:
   - postgres:latest
 
-# variables:
-#
-#   POSTGRES_DB: todos-dev
-#   POSTGRES_USER: senthilkumar
-#   POSTGRES_PASSWORD: ""
-#   POSTGRES_HOST: postgres
+variables:
+
+  POSTGRES_DB: todos-dev
+  POSTGRES_USER: senthilkumar
+  POSTGRES_PASSWORD: ""
+  POSTGRES_HOST: postgres
 
 connect:
   image: postgres
   script:
   # official way to provide password to psql: http://www.postgresql.org/docs/9.3/static/libpq-envars.html
   - export PGPASSWORD=$POSTGRES_PASSWORD
-  - psql -h "postgres" -U $POSTGRES_USER -d $POSTGRES_DB -c "SELECT 'OK' AS status;"
+  - psql -h $POSTGRES_HOST -U $POSTGRES_USER -d $POSTGRES_DB -c "SELECT 'OK' AS status;"
 
 
 stages:
   - test
+  - build
+  - format
+  - lint
+  - push_to_heroku
 
 cache:
   paths:
     - node_modules/
-
-testing_testing:
-  stage: test
-  script:
-    - npm install -g nyc
-    - npm install -g sequelize-cli
-    - NODE_ENV=test sequelize db:migrate
-    - npm test
-    - npm run coverage
-    - mv .nyc_output/ coverage/
-  coverage: /All files\s*\|\s*([\d\.]+)/
-  artifacts:
-      paths:
-      - coverage/
 
 install_dependencies:
   stage: build
@@ -61,6 +69,20 @@ eslint:
     #- eslint --init
     # Run ESLint
     - eslint ./app/*
+
+testing_testing:
+  stage: test
+  script:
+    - npm install -g nyc
+    - npm install -g sequelize-cli
+    - NODE_ENV=test sequelize db:migrate
+    - npm test
+    - npm run coverage
+    - mv .nyc_output/ coverage/
+  coverage: /All files\s*\|\s*([\d\.]+)/
+  artifacts:
+      paths:
+      - coverage/
 
 deploy:
   stage: push_to_heroku
