@@ -20,15 +20,15 @@ connect:
 
 stages:
   - test
-  #- build
-  #- format
-  #- lint
-  #- push_to_heroku
+  - build
+  # - format
+  # - lint
+  # - push_to_heroku
 
 cache:
   paths:
     - node_modules/
-    
+
 testing_testing:
   stage: test
   script:
